@@ -10,11 +10,24 @@
     <link rel="stylesheet" href="css/nationalPark.css">
 
     <script src="scripts/nav.js"></script>
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/nationalParkData.js"></script>
+    <script src="scripts/parkTypeData.js"></script>
+    <script src="scripts/nationalPark.js"></script>
+    
 </head>
 <body>
     <header id="header">
         <nav id="nav"></nav>
     </header>
+    <select id="locationList"><p>By Location</p>
+        <option>Select a Location</option>
+    </select>
+    <select id="parkList"><p>By Park Type</p>
+        <option>Select a Park Type</option>
+    </select>
+    <input id="searchBox" type="text" placeholder="Search for park here">
+    <ul id="searchOptions"></ul>
 
     
 </body>
