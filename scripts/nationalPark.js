@@ -10,6 +10,9 @@ const image_list = document.getElementById("image_list");
 const output = document.getElementById("output");
 const clear = document.getElementById("clear");
 const list = document.getElementById("list");
+const tbody = document.querySelector("#list tbody");
+
+
 
 
 
@@ -43,30 +46,39 @@ function parkDescription(nationalParksArray){
     
     let cellAddress = row.insertCell(2);
     cellAddress.innerHTML = `
-    ${nationalParksArray.Address}
+    ${nationalParksArray.Address}<br>
     ${nationalParksArray.City} ${nationalParksArray.State}-${nationalParksArray.ZipCode}
     `
 
     let cellLink = row.insertCell(3);
     const link = document.createElement("a")
-    link.src = nationalParksArray.Vist
-    cellLink.innerHTML = link;
+    link.innerHTML = nationalParksArray.Visit
+    link.herf = nationalParksArray.Visit
+    cellLink.innerHTML = nationalParksArray.Visit
+
+   
+    
 
     let contactInfo = row.insertCell(4);
     contactInfo.innerHTML = `
-    Phone Number: ${nationalParksArray.Phone}
+    Phone Number: ${nationalParksArray.Phone}<br>
     Fax : ${nationalParksArray.Fax}
     `
 
-
-
 }
 
+
+
+
 locationList.addEventListener("change", ()=>{
+    
     tbody.innerHTML= ""
     let selectedList = locationList.selectedOptions[0].value;
-    
-})
+    let parks = nationalParksArray.filter(park => park.State.toLowerCase() === selectedList.toLowerCase())
+    parks.forEach(park => parkDescription(park))
+    })
+
+
 
 
 // function contains(needle, haystack){
