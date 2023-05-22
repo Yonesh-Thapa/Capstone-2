@@ -1,12 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const searchBox = document.getElementById("searchBox");
-  const searchOptions = document.getElementById("searcOptions");
+  const searchOptions = document.getElementById("searchOptions");
   const locationList = document.getElementById("locationList");
   const parkList = document.getElementById("parkList");
-  const image_list = document.getElementById("image_list");
-  const output = document.getElementById("output");
-  const clear = document.getElementById("clear");
-  const list = document.getElementById("list");
+  
   const tbody = document.querySelector("#list tbody");
 
   for (let i = 0; i < locationsArray.length; i++) {
@@ -43,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let cellLink = row.insertCell(2);
     if (nationalParksArray.Visit != undefined) {
       const link = document.createElement("a");
+      link.target = '_blank'
       link.innerHTML = "Visit";
       link.href = nationalParksArray.Visit;
       cellLink.appendChild(link);
