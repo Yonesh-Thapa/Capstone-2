@@ -6,6 +6,10 @@ const searchBox = document.getElementById("searchBox")
 const searchOptions = document.getElementById("searcOptions");
 const locationList = document.getElementById("locationList");
 const parkList = document.getElementById("parkList");
+const image_list = document.getElementById("image_list");
+const output = document.getElementById("output");
+const clear = document.getElementById("clear");
+const list = document.getElementById("list");
 
 
 
@@ -28,37 +32,58 @@ for(let i =0; i < parkTypesArray.length; i++){
     parkList.appendChild(option)
 }
 
-function contains(needle, haystack){
-    const NOT_FOUND = -1
-    let doesContain = true
+function parkDescription(nationalParksArray){
+    let row = tbody.insertRow(-1);
+    
+    let cellId = row.insertCell(0);
+    cellId.innerHTML = nationalParksArray.LocationID
 
-    needle = needle.toLowerCase()
-    haystack = haystack.toLowerCase()
+    let cellLocation = row.insertCell(1);
+    cellLocation.innerHTML = nationalParksArray.LocationName
+    
+    let cellAddress = row.insertCell(2);
+    cellAddress.innerHTML = `
+    ${nationalParksArray.Address}
+    ${nationalParksArray.City} ${nationalParksArray.State}-${nationalParksArray.ZipCode}
+    `
 
-    index = haystack.indexOf(needle)
+    let cellLink = row.insertCell(3);
+    const link = document.createElement("a")
+    link.src = nationalParksArray.Vist
+    cellLink.innerHTML = link;
 
-    if (index == NOT_FOUND){
-        doesContain = false;
-    }
-    return doesContain
+    let contactInfo = row.insertCell(4);
+    contactInfo.innerHTML = `
+    Phone Number: ${nationalParksArray.Phone}
+    Fax : ${nationalParksArray.Fax}
+    `
+
+
+
 }
 
-function search(){
-const searchTerm = searchBox.value.toLowerCase();
-
-nationalParksArray.forEach(item => {
-    const searchFound = contains(searchTerm, item.LocationName)
-    if (searchFound){
-        searchOptions.innerHTML += item.LocationName
-    }
-
+locationList.addEventListener("change", ()=>{
+    tbody.innerHTML= ""
+    let selectedList = locationList.selectedOptions[0].value;
+    
 })
 
 
-}
+// function contains(needle, haystack){
+//     const NOT_FOUND = -1
+//     let doesContain = true
 
+//     needle = needle.toLowerCase()
+//     haystack = haystack.toLowerCase()
 
-searchBox.addEventListener("input", search);
+//     index = haystack.indexOf(needle)
+
+//     if (index == NOT_FOUND){
+//         doesContain = false;
+//     }
+//     return doesContain
+// }
+
 
 
 
