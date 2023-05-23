@@ -77,55 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
     
     }
 
+    
+
     parks.forEach((park) => parkDescription(park));
 
     
   }
+  
+
   locationList.addEventListener("change", filterParks)
   parkList.addEventListener("change", filterParks)
-  searchBox.addEventListener("input", filterParks)
+  searchBox.addEventListener("input", search)
 
   filterParks();
-
-
-
-
-
-
-
-
-
-//   locationList.addEventListener("change", () => {
-//     tbody.innerHTML = "";
-//     let selectedList = locationList.selectedOptions[0].value;
-//     let parks = nationalParksArray.filter(
-//       (park) => park.State.toLowerCase() === selectedList.toLowerCase()
-//     );
-//     parks.forEach((park) => parkDescription(park));
-//   });
-
-//   parkList.addEventListener("change", () => {
-//     tbody.innerHTML = "";
-//     let selectedList = parkList.selectedOptions[0].value;
-//     let parks = nationalParksArray.filter(
-//       (park) =>
-//         park.LocationName.toLowerCase().indexOf(selectedList.toLowerCase()) != -1
-//     );
-//     parks.forEach((park) => parkDescription(park));
-//   });
-
-  // function contains(needle, haystack){
-  //     const NOT_FOUND = -1
-  //     let doesContain = true
-
-  //     needle = needle.toLowerCase()
-  //     haystack = haystack.toLowerCase()
-
-  //     index = haystack.indexOf(needle)
-
-  //     if (index == NOT_FOUND){
-  //         doesContain = false;
-  //     }
-  //     return doesContain
-  // }
+  
 });

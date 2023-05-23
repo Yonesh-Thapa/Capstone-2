@@ -1,0 +1,15 @@
+thead{
+    width: 100%;
+    
+}
+th{
+    text-align: center;
+    padding-right:20vw;
+    background-color: #333741;
+    color:white;
+    font-size: larger;
+}
+td{
+    border-bottom: 1px solid black;
+    padding: 1rem;
+}
