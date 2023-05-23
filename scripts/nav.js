@@ -1,7 +1,7 @@
-const navMenu=[
+const navMenu = [
     {
-        name:"Home",
-        link:"index.html",
+        name: "Home",
+        link: "index.html",
         current: "home"
     },
     {
@@ -10,24 +10,24 @@ const navMenu=[
         current: "mountain"
     },
 
-{
-    name: "National Park",
-    link: "nationalPark.html",
-    current: "park"
-}
+    {
+        name: "National Park",
+        link: "nationalPark.html",
+        current: "park"
+    }
 
 ]
 
 // 
 
-function navLink(item){
+function navLink(item) {
     const link = document.createElement("a")
     link.innerHTML = item.name
     link.href = item.link
     return link
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
     const image = document.createElement("img");
     image.src = "banner.jpg";
     image.alt = "Banner Image";
@@ -35,18 +35,21 @@ document.addEventListener("DOMContentLoaded", ()=>{
     banner.classList.add("banner");
     banner.appendChild(image);
 
-    const nav = document.getElementById("nav")
-    navMenu.forEach( (item) => nav.appendChild(navLink(item)));
 
-//    current === "home" ? "active" : ""
-//    current === "mountain" ? "active" : ""
-//    current === "park" ? "active" : ""
+    const nav = document.getElementById("nav")
+    navMenu.forEach((item) => nav.appendChild(navLink(item)));
+
+    //    current === "home" ? "active" : ""
+    //    current === "mountain" ? "active" : ""
+    //    current === "park" ? "active" : ""
+
+
 
     const footer = document.createElement("footer")
     footer.id = "footer"
     const year = document.createElement('span')
     year.id = 'year'
-    
+
     footer.appendChild(year);
 
     const copyright = document.createTextNode(' \u00A9 Present by Yonesh Thapa. All right reserved.')
@@ -56,6 +59,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const currentYear = new Date().getFullYear();
 
     document.getElementById('year').textContent = currentYear
-    
+
 
 })

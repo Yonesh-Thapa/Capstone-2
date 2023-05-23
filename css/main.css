@@ -32,3 +32,14 @@ nav a:hover{
     bottom: 0;
     width: 100%;
   }
+  
+#banner{
+    height:110px;
+    overflow:hidden;
+    width:100%
+
+}
+img{
+    height:400px;
+    width:100vw;
+}
