@@ -18,7 +18,7 @@ const navMenu = [
 
 ]
 
-// 
+
 
 function navLink(item) {
     const link = document.createElement("a")
@@ -34,9 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const banner = document.createElement("div")
     banner.classList.add("banner");
     banner.appendChild(image);
+    document.body.prepend(banner);
+
 
 
     const nav = document.getElementById("nav")
+    // document.body.insertBefore(banner, nav);
+
     navMenu.forEach((item) => nav.appendChild(navLink(item)));
 
     //    current === "home" ? "active" : ""

@@ -1,6 +1,5 @@
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const mountainList = document.getElementById("mountainList");
 
@@ -9,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let description = document.createElement("p");
   let elevation = document.createElement("p");
   let coordinates = document.createElement("p");
+
   document.body.appendChild(heading)
   document.body.appendChild(image)
   document.body.appendChild(description)
@@ -24,14 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
     mountainList.appendChild(option);
   }
 
-  function displayMountain(mountainInfo) {
+  async function displayMountain(mountainInfo) {
    
     heading.innerHTML = mountainInfo.name;
     image.src = "images/" + mountainInfo.img;
     description.innerHTML = mountainInfo.desc;
     elevation.innerHTML = mountainInfo.elevation;
-    coordinates.innerHTML = getSunsetForMountain(mountainInfo[i].coords.lat, mountainInfo[i].coords.lng)
-
+    const sunriseAndSunsetData = await getSunriseAndSunsetForMountain(mountainInfo.coords.lat, mountainInfo.coords.lng)
+    coordinates.innerHTML = `Sunset Time: ${sunriseAndSunsetData.sunset}`;
+    coordinates.innerHTML += `<br>Sunrise Time:${sunriseAndSunsetData.sunrise}`;
   }
 
   mountainList.addEventListener("change", () => {
@@ -46,9 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // function that can "fetch" the sunrise/sunset times
-async function getSunsetForMountain(lat, lng){
+async function getSunriseAndSunsetForMountain(lat, lng){
   let response = await fetch(
   `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
   let data = await response.json();
-  return data;
+  return {
+    sunrise: data.results.sunrise,
+    sunset: data.results.sunset,
+  }
   }
