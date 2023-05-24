@@ -20,6 +20,11 @@ p{
 }
 select{
     display:inline;
+    background:transparent;
+    color:white;
+}
+option{
+    color:black;
 }
 .content{
     display:inline-block;
@@ -28,9 +33,30 @@ select{
 img{
     display: inline-block;
 }
-tbody tr:nth-child(even){
+tbody{
     background-color: #e5e5e5;
 }
 tbody tr:hover{
     background-color: #cfcfcf;;
+}
+input[type=text] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    margin:2rem;
+    border-radius: 1rem;
+    border:2px solid black;
+    
+  }
+  input::placeholder{
+    color:black;
+}
+input{
+    border:none;
 }

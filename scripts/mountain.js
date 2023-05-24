@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
   mountainList.addEventListener("change", () => {
     content.innerHTML = "";
     heading.innerHTML = "";
+    let gif2 = document.getElementById("gif2");
+    gif2.style.display = "none"
 
 
     window.image = document.createElement("img");
@@ -61,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let selectedList = mountainList.selectedOptions[0].value;
     for (i = 0; i < mountainsArray.length; i++) {
+      
       let mountainInfo = mountainsArray[i];
       if (selectedList === mountainInfo.name) {
         displayMountain(mountainInfo);
@@ -70,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     footer_style.style.position = "fixed";
+    
 
   });// end of change event
 

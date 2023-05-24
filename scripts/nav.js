@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     footer.appendChild(year);
 
-    const copyright = document.createTextNode(' \u00A9 Present by Yonesh Thapa. All right reserved.')
+    const copyright = document.createTextNode(' \u00A9 Presented by Yonesh Thapa. All right reserved.')
     footer.appendChild(copyright);
 
     document.body.appendChild(footer);

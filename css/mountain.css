@@ -5,7 +5,7 @@ let elevation = document.createElement("p");
 let coordinates = document.createElement("p"); */
 
 
-img{
+.content img{
     border-radius: 1rem;
     display: inline;
     margin-left: 2rem;
@@ -25,12 +25,35 @@ p{
 option{
     border-radius: 1rem;
 }
-
 .content{
+    background-color: #333741;
+    padding-top: 1rem;
+    
+}
+
+.content p{
     min-height: 300px;
+    /* background-color: #cfcfcf77; */
+    color:white;
 }
 
 .content .description{
     font-size: 20px;
     font-weight: bold;
 }
+#gif2{
+    margin:auto;
+    padding-top:0;
+    padding:6vw;
+    padding-top:0;
+    
+}
+#gif2 img{
+    height: 350px;
+    width: 400px;
+    
+   
+}
+
+
+

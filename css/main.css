@@ -43,5 +43,41 @@ nav a:hover{
 select{
     margin:2rem;
     border-radius: 1rem;
-    padding:1rem
+    padding:1rem;
+    
+        font-size: larger;
+        /* background:transparent;
+        color:white; */
+        border: 2px solid #333741;
+}
+#gif{
+    /* position:absolute; */
+
+    /* background-color: black; */
+    width:100%;
+
+
+}
+
+#gif img{
+    width:80%;
+    height: 400px;
+    margin-left:10vw;
+    margin-right:10vw;
+    border-radius: .5rem;
+    /* position:relative; */
+   
+
+    
+}
+
+.content{
+    padding: 3rem;
+}
+#footer{
+    position:relative;
+}
+
+body{
+    background-image: url(/nature.webp)
 }

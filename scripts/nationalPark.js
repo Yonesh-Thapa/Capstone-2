@@ -83,8 +83,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
   }
+  function filterByFunction(searchValue){
+    tbody.innerHTML = "";
+    // LocationID: "ABLI",
+    // LocationName: "Abraham Lincoln Birthplace National Historical Park",
+    // Address: "2995 Lincoln Farm Road",
+    // City: "Hodgenville",
+    // State: "Kentucky",
+    // ZipCode: 42748,
+
+
+    let parks = nationalParksArray.filter(
+            (park) => {
+              // park.State.toLowerCase().includes(searchValue.toLowerCase())|| park.LocationName.toLowerCase().includes(searchValue.toLowerCase())
+                 let all = JSON.stringify(park).toLowerCase();
+                 console.log(all);
+                 return all.includes(searchValue.toLowerCase())
+
+            }
+                        
+            // park.LocationName.toLowerCase().indexOf(searchValue.toLowerCase()) != -1
+          );
+    
+   
+    
+
+    parks.forEach((park) => parkDescription(park));
+
+    
+  
+  }
+
+
   function search(){
     tbody.innerHTML="";
+    filterByFunction(searchBox.value)
     
   }
   
@@ -94,6 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
   searchBox.addEventListener("input", search)
 
   filterParks();
+
+
 
 
 
