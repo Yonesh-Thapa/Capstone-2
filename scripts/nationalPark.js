@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       link.href = nationalParksArray.Visit;
       cellLink.appendChild(link);
     } else {
-      cellLink.innerHTML = "N/A";
+      cellLink.innerHTML = "<span style='font-size:40px'>&#128581;&#127995;</span> N/A";
     }
 
     let contactInfo = row.insertCell(3);
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedList = locationList.selectedOptions[0].value;
     let selectedParkList = parkList.selectedOptions[0].value;
     let parks = nationalParksArray
-    if (selectedList !== "any" && selectedParkList !== "any"){
+    if (selectedList !== "any" && selectedParkList !== "any"){ 
         parks = nationalParksArray.filter(
             (park) => park.State.toLowerCase() === selectedList.toLowerCase() && park.LocationName.toLowerCase().indexOf(selectedParkList.toLowerCase()) != -1
           );
@@ -81,6 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     parks.forEach((park) => parkDescription(park));
 
+    
+  }
+  function search(){
+    tbody.innerHTML="";
     
   }
   

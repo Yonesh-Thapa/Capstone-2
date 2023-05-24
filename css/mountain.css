@@ -1,0 +1,36 @@
+/* let heading = document.createElement("h1");
+let image = document.createElement("img");
+let description = document.createElement("p");
+let elevation = document.createElement("p");
+let coordinates = document.createElement("p"); */
+
+
+img{
+    border-radius: 1rem;
+    display: inline;
+    margin-left: 2rem;
+    /* box-shadow: 2px 2px 2px 2px #333741; */
+}
+h1{
+    text-align: center;
+}
+
+p{
+    display: inline-block;
+    width:23%;
+    vertical-align: top;
+    padding-left: 1rem;
+}
+
+option{
+    border-radius: 1rem;
+}
+
+.content{
+    min-height: 300px;
+}
+
+.content .description{
+    font-size: 20px;
+    font-weight: bold;
+}

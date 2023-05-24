@@ -13,3 +13,24 @@ td{
     border-bottom: 1px solid black;
     padding: 1rem;
 }
+p{
+    display:inline;
+    padding-left: 1rem;
+    
+}
+select{
+    display:inline;
+}
+.content{
+    display:inline-block;
+}
+
+img{
+    display: inline-block;
+}
+tbody tr:nth-child(even){
+    background-color: #e5e5e5;
+}
+tbody tr:hover{
+    background-color: #cfcfcf;;
+}

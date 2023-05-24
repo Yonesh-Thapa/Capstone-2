@@ -12,7 +12,7 @@ nav a{
     color:white;
     text-decoration: none;
     display:inline-block;
-
+    font-size:large;
     padding:1rem;
 }
 nav a:hover{
@@ -39,4 +39,9 @@ nav a:hover{
 .banner img{
     height:400px;
     width:100%
+}
+select{
+    margin:2rem;
+    border-radius: 1rem;
+    padding:1rem
 }

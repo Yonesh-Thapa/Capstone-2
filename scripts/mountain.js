@@ -2,18 +2,17 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const mountainList = document.getElementById("mountainList");
-
+  let content = document.createElement("div")
+  content.classList.add("content");
   let heading = document.createElement("h1");
-  let image = document.createElement("img");
-  let description = document.createElement("p");
-  let elevation = document.createElement("p");
-  let coordinates = document.createElement("p");
 
-  document.body.appendChild(heading)
-  document.body.appendChild(image)
-  document.body.appendChild(description)
-  document.body.appendChild(elevation)
-  document.body.appendChild(coordinates)
+  document.body.insertBefore(heading, footer)
+
+
+  document.body.insertBefore(content, footer)//.appendChild(content)
+
+
+
 
   for (let i = 0; i < mountainsArray.length; i++) {
     let mountainInfo = mountainsArray[i];
@@ -25,34 +24,65 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function displayMountain(mountainInfo) {
-   
+
+
     heading.innerHTML = mountainInfo.name;
     image.src = "images/" + mountainInfo.img;
     description.innerHTML = mountainInfo.desc;
-    elevation.innerHTML = mountainInfo.elevation;
     const sunriseAndSunsetData = await getSunriseAndSunsetForMountain(mountainInfo.coords.lat, mountainInfo.coords.lng)
-    coordinates.innerHTML = `Sunset Time: ${sunriseAndSunsetData.sunset}`;
-    coordinates.innerHTML += `<br>Sunrise Time:${sunriseAndSunsetData.sunrise}`;
+
+    coordinates.innerHTML = `<span style="font-size: 30px">&#127749;</span> Sunrise Time: ${sunriseAndSunsetData.sunrise.toLocaleString()}`;
+
+    coordinates.innerHTML += `<span style="font-size: 30px"><br>&#127748;</span> Sunset Time: ${sunriseAndSunsetData.sunset.toLocaleString()}`;
+
+    elevation.innerHTML = `<span style="font-size: 30px">⛰&#128207;</span>` +  mountainInfo.elevation;
+
   }
 
   mountainList.addEventListener("change", () => {
+    content.innerHTML = "";
+    heading.innerHTML = "";
+
+
+    window.image = document.createElement("img");
+    window.description = document.createElement("p");
+    description.classList.add("description");
+    window.elevation = document.createElement("p");
+    window.coordinates = document.createElement("p");
+
+    content.appendChild(image)
+    content.appendChild(description)
+    content.appendChild(coordinates)
+    content.appendChild(elevation)
+
+
+    const footer_style = document.getElementById("footer")
+
+
     let selectedList = mountainList.selectedOptions[0].value;
     for (i = 0; i < mountainsArray.length; i++) {
       let mountainInfo = mountainsArray[i];
       if (selectedList === mountainInfo.name) {
         displayMountain(mountainInfo);
+
+        footer_style.style.position = "relative";
+        return
       }
     }
-  });
-});
+    footer_style.style.position = "fixed";
+
+  });// end of change event
+
+
+});// end of content loaded
 
 // function that can "fetch" the sunrise/sunset times
-async function getSunriseAndSunsetForMountain(lat, lng){
+async function getSunriseAndSunsetForMountain(lat, lng) {
   let response = await fetch(
-  `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
+    `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today&formatted=0`);
   let data = await response.json();
   return {
-    sunrise: data.results.sunrise,
-    sunset: data.results.sunset,
+    sunrise: new Date(data.results.sunrise),
+    sunset: new Date(data.results.sunset),
   }
-  }
+}
