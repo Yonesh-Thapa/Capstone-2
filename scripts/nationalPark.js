@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchOptions = document.getElementById("searchOptions");
   const locationList = document.getElementById("locationList");
   const parkList = document.getElementById("parkList");
-  
+
   const tbody = document.querySelector("#list tbody");
 
   for (let i = 0; i < locationsArray.length; i++) {
@@ -59,60 +59,60 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedList = locationList.selectedOptions[0].value;
     let selectedParkList = parkList.selectedOptions[0].value;
     let parks = nationalParksArray
-    if (selectedList !== "any" && selectedParkList !== "any"){ 
-        parks = nationalParksArray.filter(
-            (park) => park.State.toLowerCase() === selectedList.toLowerCase() && park.LocationName.toLowerCase().indexOf(selectedParkList.toLowerCase()) != -1
-          );
+    if (selectedList !== "any" && selectedParkList !== "any") {
+      parks = nationalParksArray.filter(
+        (park) => park.State.toLowerCase() === selectedList.toLowerCase() && park.LocationName.toLowerCase().indexOf(selectedParkList.toLowerCase()) != -1
+      );
     }
-    else if(selectedParkList !== "any"){
-        parks = nationalParksArray.filter(
-            (park) => park.LocationName.toLowerCase().indexOf(selectedParkList.toLowerCase()) != -1
-          );
+    else if (selectedParkList !== "any") {
+      parks = nationalParksArray.filter(
+        (park) => park.LocationName.toLowerCase().indexOf(selectedParkList.toLowerCase()) != -1
+      );
 
     }
-    else if (selectedList !== "any"){
-        parks = nationalParksArray.filter(
-            (park) => park.State.toLowerCase() === selectedList.toLowerCase()
-          );
-    
+    else if (selectedList !== "any") {
+      parks = nationalParksArray.filter(
+        (park) => park.State.toLowerCase() === selectedList.toLowerCase()
+      );
+
     }
 
-    
+
 
     parks.forEach((park) => parkDescription(park));
 
-    
+
   }
-  function filterByFunction(searchValue){
+  function filterByFunction(searchValue) {
     tbody.innerHTML = "";
-       let parks = nationalParksArray.filter(
-            (park) => {
-              // park.State.toLowerCase().includes(searchValue.toLowerCase())|| park.LocationName.toLowerCase().includes(searchValue.toLowerCase())
-                 let all = JSON.stringify(park).toLowerCase();
-                 console.log(all);
-                 return all.includes(searchValue.toLowerCase())
+    let parks = nationalParksArray.filter(
+      (park) => {
+        // park.State.toLowerCase().includes(searchValue.toLowerCase())|| park.LocationName.toLowerCase().includes(searchValue.toLowerCase())
+        let all = JSON.stringify(Object.values(park)).toLowerCase();
+        console.log(all);
+        return all.includes(searchValue.toLowerCase())
 
-            }
-                        
-            // park.LocationName.toLowerCase().indexOf(searchValue.toLowerCase()) != -1
-          );
-    
-   
-    
+      }
+
+      // park.LocationName.toLowerCase().indexOf(searchValue.toLowerCase()) != -1
+    );
+
+
+
 
     parks.forEach((park) => parkDescription(park));
 
-    
-  
+
+
   }
 
 
-  function search(){
-    tbody.innerHTML="";
+  function search() {
+    tbody.innerHTML = "";
     filterByFunction(searchBox.value)
-    
+
   }
-  
+
 
   locationList.addEventListener("change", filterParks)
   parkList.addEventListener("change", filterParks)
@@ -130,24 +130,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//   locationList.addEventListener("change", () => {
-//     tbody.innerHTML = "";
-//     let selectedList = locationList.selectedOptions[0].value;
-//     let parks = nationalParksArray.filter(
-//       (park) => park.State.toLowerCase() === selectedList.toLowerCase()
-//     );
-//     parks.forEach((park) => parkDescription(park));
-//   });
+  //   locationList.addEventListener("change", () => {
+  //     tbody.innerHTML = "";
+  //     let selectedList = locationList.selectedOptions[0].value;
+  //     let parks = nationalParksArray.filter(
+  //       (park) => park.State.toLowerCase() === selectedList.toLowerCase()
+  //     );
+  //     parks.forEach((park) => parkDescription(park));
+  //   });
 
-//   parkList.addEventListener("change", () => {
-//     tbody.innerHTML = "";
-//     let selectedList = parkList.selectedOptions[0].value;
-//     let parks = nationalParksArray.filter(
-//       (park) =>
-//         park.LocationName.toLowerCase().indexOf(selectedList.toLowerCase()) != -1
-//     );
-//     parks.forEach((park) => parkDescription(park));
-//   });
+  //   parkList.addEventListener("change", () => {
+  //     tbody.innerHTML = "";
+  //     let selectedList = parkList.selectedOptions[0].value;
+  //     let parks = nationalParksArray.filter(
+  //       (park) =>
+  //         park.LocationName.toLowerCase().indexOf(selectedList.toLowerCase()) != -1
+  //     );
+  //     parks.forEach((park) => parkDescription(park));
+  //   });
 
   // function contains(needle, haystack){
   //     const NOT_FOUND = -1

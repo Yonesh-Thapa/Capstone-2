@@ -1,93 +1,115 @@
-body{
-    margin:0;
-    padding:0;
+body {
+    margin: 0;
+    padding: 0;
 
 }
-nav{
+
+nav {
     background-color: #333741;
     
 
+
 }
-nav a{
-    color:white;
+
+nav a {
+    color: white;
     text-decoration: none;
-    display:inline-block;
-    font-size:large;
-    padding:1rem;
+    display: inline-block;
+    font-size: large;
+    padding: 1rem;
 }
-nav a:hover{
-    color:black;
-    background-color:white;
-}
-.active{
-    color:black;
+
+nav a:hover {
+    color: black;
     background-color: white;
 }
+
+.active {
+    color: black;
+    background-color: white;
+}
+
 #footer {
-    color:white;
+    color: white;
     background-color: #333333;
     padding: 20px;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
-  }
-.banner{
-    height:110px;
-    overflow:hidden;
 }
-.banner img{
-    height:400px;
-    width:100%
+
+.banner {
+    height: 110px;
+    overflow: hidden;
 }
-select{
-    margin:2rem;
+
+.banner img {
+    height: 400px;
+    width: 100%
+}
+
+select {
+    margin: 2rem;
     border-radius: 1rem;
-    padding:1rem;
-    
-        font-size: larger;
-        /* background:transparent;
+    padding: 1rem;
+
+    font-size: larger;
+    /* background:transparent;
         color:white; */
-        border: 2px solid #333741;
+    border: 2px solid #333741;
 }
-#gif{
+
+#gif {
     /* position:absolute; */
 
     /* background-color: black; */
-    width:100%;
+    width: 100%;
 
 
 }
 
-#gif img{
-    width:80%;
+#gif img {
+    width: 80%;
     height: 400px;
-    margin-left:10vw;
-    margin-right:10vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
     border-radius: .5rem;
     /* position:relative; */
-   
 
-    
+
+
 }
 
-.content{
-    padding: 3rem;
-}
-#footer{
-    position:relative;
+
+#footer {
+    position: relative;
 }
 
-body{
+body {
     background-image: url(/nature.webp)
 }
 
 
-.main-content{
+.content {
     padding: 3rem;
     background-color: white;
-    width:80%;
-    margin:auto;
+    width: 80%;
+    margin: auto;
     padding-top: 8vh;
-    margin-top:50vh
+    margin-top: 50vh
+}
+
+ul {
+    list-style: none;
+    list-style-type: none;
+   
+}
+.navbar-nav{
+    /* flex-direction: row; */
+    margin-top:0;
+}
+li{
+    display:inline-block;
+    
 }

@@ -2,30 +2,25 @@ const navMenu = [
     {
         name: "Home",
         link: "index.html",
-        current: "home"
+        class: "nav-item"
     },
     {
         name: "Mountains",
         link: "mountain.html",
-        current: "mountain"
+        class: "nav-item"
     },
 
     {
         name: "National Park",
         link: "nationalPark.html",
-        current: "park"
-    }
+        class: "nav-item"
+    },
 
 ]
 
 
 
-function navLink(item) {
-    const link = document.createElement("a")
-    link.innerHTML = item.name
-    link.href = item.link
-    return link
-}
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const image = document.createElement("img");
@@ -38,10 +33,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    const nav = document.getElementById("nav")
-    // document.body.insertBefore(banner, nav);
 
-    navMenu.forEach((item) => nav.appendChild(navLink(item)));
+    const nav = document.createElement("nav")
+    nav.classList.add("navbar")
+    function navLink(item) {
+
+        const navSublist = document.createElement('li');
+        navSublist.classList.add(item.class)
+        const link = document.createElement("a");
+
+        link.innerHTML = item.name;
+
+        link.href = item.link
+
+        // navSublist.classList.add(item.class);
+        navList.classList.add('navbar-nav');
+
+        navSublist.appendChild(link);
+
+        return navSublist
+    }
+
+
+
+
+    const navList = document.createElement("ul")
+
+    navMenu.forEach((item) => {
+
+        navList.appendChild(navLink(item));
+
+    });
+    nav.appendChild(navList);
+    document.body.appendChild(nav);
+    let mainContent = document.querySelector(".main-content")
+    document.body.insertBefore(nav, mainContent)
+
 
     //    current === "home" ? "active" : ""
     //    current === "mountain" ? "active" : ""

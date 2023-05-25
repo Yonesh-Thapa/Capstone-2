@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     coordinates.innerHTML += `<span style="font-size: 30px"><br>&#127748;</span> Sunset Time: ${sunriseAndSunsetData.sunset.toLocaleString()}`;
 
-    elevation.innerHTML = `<span style="font-size: 30px">⛰&#128207;</span>` +  mountainInfo.elevation;
+    elevation.innerHTML = `<span style="font-size: 30px">⛰&#128207;</span>` + mountainInfo.elevation;
 
   }
 
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let selectedList = mountainList.selectedOptions[0].value;
     for (i = 0; i < mountainsArray.length; i++) {
-      
+
       let mountainInfo = mountainsArray[i];
       if (selectedList === mountainInfo.name) {
         displayMountain(mountainInfo);
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     footer_style.style.position = "fixed";
-    
+
 
   });// end of change event
 
