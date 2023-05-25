@@ -2,6 +2,23 @@ thead{
     width: 100%;
     
 }
+/* #overlapping{
+    position:relative;
+}
+#overlapping img{
+    /* position:absolute; */
+    /* left:2.5rem;
+    top:2.5rem;
+    z-index: 1;
+
+}
+
+ #overlapping input{
+    /* position:absolute; */
+    /* left:0;
+    top:0;
+
+} */ 
 th{
     text-align: center;
     padding-right:20vw;
@@ -18,6 +35,8 @@ td{
 p{
     display:inline;
     padding-left: 1rem;
+    color:white;
+    font-size: larger;
     
 }
 select{
@@ -39,7 +58,7 @@ tbody{
     background-color: transparent;
 }
 tbody tr:hover{
-    background-color: black;
+    background-color: #00000088;
     color:black;
 }
 input[type=text] {
@@ -48,12 +67,14 @@ input[type=text] {
     border-radius: 4px;
     font-size: larger;
     /* background-color: white; */
-    /* background-image: url('/searchicon.png'); */
+    background-image: url('../searchicon.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 12px 20px 12px 45px;
     margin:2rem;
     border-radius: 1rem;
+    color:white;
+    background-size:1.5rem 1.5rem;
     
     background-color: transparent;
     
@@ -72,6 +93,7 @@ input{
         /* background:transparent;
         color:white; */
         border: 2px solid #333741;
+    background-color: transparent;
 }
 
 
