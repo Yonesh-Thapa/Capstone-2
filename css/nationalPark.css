@@ -12,6 +12,8 @@ th{
 td{
     border-bottom: 1px solid black;
     padding: 1rem;
+    color:white;
+    
 }
 p{
     display:inline;
@@ -34,18 +36,19 @@ img{
     display: inline-block;
 }
 tbody{
-    background-color: #e5e5e5;
+    background-color: transparent;
 }
 tbody tr:hover{
-    background-color: #cfcfcf;;
+    background-color: black;
+    color:black;
 }
 input[type=text] {
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    /* border: 2px solid #ccc; */
     border-radius: 4px;
     font-size: 16px;
-    background-color: white;
-    background-image: url('/searchicon.png');
+    /* background-color: white; */
+    /* background-image: url('/searchicon.png'); */
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -60,7 +63,9 @@ input[type=text] {
     color:white;
 }
 input{
-    border:2px solid #333741;
+    color:white;
+
+
     background-color: transparent;
 }
 

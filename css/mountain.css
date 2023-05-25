@@ -26,8 +26,10 @@ option{
     border-radius: 1rem;
 }
 .content{
-    background-color: #333741;
+    background:transparent;
     padding-top: 1rem;
+    width:90%;
+    margin:auto;
     
 }
 
@@ -35,6 +37,9 @@ option{
     min-height: 300px;
     /* background-color: #cfcfcf77; */
     color:white;
+    font-size: 18px;
+  
+
 }
 
 .content .description{
@@ -54,6 +59,30 @@ option{
     
    
 }
-
+select{
+    display:inline;
+    background:transparent;
+    color:white;
+}
+option{
+    color:black;
+}
+input[type=text] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    margin:2rem;
+    border-radius: 1rem;
+    border:2px solid #333741;
+    background-color: transparent;
+    
+    
+  }
 
 

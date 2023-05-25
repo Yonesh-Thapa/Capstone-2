@@ -82,7 +82,12 @@ body{
     background-image: url(/nature.webp)
 }
 
-.content{
+
+.main-content{
+    padding: 3rem;
     background-color: white;
-    mix-blend-mode: screen;
+    width:80%;
+    margin:auto;
+    padding-top: 8vh;
+    margin-top:50vh
 }
