@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Footer Example</title>
+  <style>
+    /* Some basic styling for the footer */
+    #footer {
+      background-color: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Content of the webpage -->
+  
+  <div id="footer">
+    <span id="year"></span> &copy; Your Website. All rights reserved.
+  </div>
+
+  <script>
+    // Get the current year
+    var currentYear = new Date().getFullYear();
+    
+    // Set the current year in the footer
+    document.getElementById('year').textContent = currentYear;
+  </script>
+</body>
+</html>

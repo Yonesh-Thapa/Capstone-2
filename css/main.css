@@ -81,3 +81,8 @@ select{
 body{
     background-image: url(/nature.webp)
 }
+
+.content{
+    background-color: white;
+    mix-blend-mode: screen;
+}
